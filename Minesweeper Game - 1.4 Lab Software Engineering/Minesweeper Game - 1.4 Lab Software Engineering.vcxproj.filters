@@ -27,9 +27,21 @@
     <ClInclude Include="Minesweeper Game - 1.4 Lab Software Engineering.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MinesweepAppLauncher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MinesweepGUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Minesweeper Game - 1.4 Lab Software Engineering.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MinesweepAppLauncher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MinesweepGUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
