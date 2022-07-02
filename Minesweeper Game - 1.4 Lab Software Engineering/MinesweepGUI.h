@@ -1,5 +1,10 @@
 #pragma once
-class MinesweepGUI
+#include "wx/wx.h"
+
+class MinesweepGUI : public wxFrame
 {
+public:
+	MinesweepGUI();
+	~MinesweepGUI();
 };
 
