@@ -2,6 +2,8 @@
 #include "wx/wx.h"
 #include "MinesweepGUI.h"
 
+
+//replaces the tutorial video's cApp
 class MinesweepAppLaunch : public wxApp
 {
 public:

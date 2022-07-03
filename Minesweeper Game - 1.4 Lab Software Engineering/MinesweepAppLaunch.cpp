@@ -1,6 +1,8 @@
 #include "MinesweepAppLaunch.h"
 wxIMPLEMENT_APP(MinesweepAppLaunch);
 
+//replaces the tutorial video's cApp
+
 MinesweepAppLaunch::MinesweepAppLaunch()
 {
 
