@@ -2,7 +2,7 @@
 
 //defining the Event Table here using wx-macros, it takes name of class it is producing events for and the base class as parameters
 wxBEGIN_EVENT_TABLE(MinesweepGUI, wxFrame)
-	//orig. code for orig single button "Click me"	//EVT_BUTTON(1001, onButtonClicked)
+	//EVT_BUTTON(1001, onButtonClicked)
 wxEND_EVENT_TABLE()
 
 //replaces the tutorial video's cMain
@@ -42,8 +42,8 @@ void MinesweepGUI::onButtonClicked(wxCommandEvent& evt)
 	//myFirstListBox->AppendString(myFirstTextbox->GetValue());	//can use wxString and std::string class interchangably
 
 	//get coordinate of button in arrayOfButtonPtrs AKA specify which button was clicked
-	int x = (evt.GetId() - 1000) % fieldWidth;
-	int y = (evt.GetId() - 1000) / fieldWidth;
+	int x = (evt.GetId() - 10000) % fieldWidth;
+	int y = (evt.GetId() - 10000) / fieldWidth;
 
 	if (veryFirstClick) {	//generate minefield AFTER first click
 		int mines = 30;

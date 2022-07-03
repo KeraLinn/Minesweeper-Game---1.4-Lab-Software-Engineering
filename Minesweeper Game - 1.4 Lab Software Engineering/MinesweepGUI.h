@@ -15,10 +15,11 @@ public:
 	wxListBox* myFirstListBox = nullptr;*/
 	int fieldWidth = 10;
 	int fieldHeight = 10;
-	wxButton** arrayOfButtonPtrs;
+	wxButton** arrayOfButtonPtrs; //replaces tutorial's variable btn
 
-	int* minefieldTracker = nullptr;
+	int* minefieldTracker = nullptr; //replaces tutorial's variable btn
 	bool veryFirstClick = true; //at this point is when the minefield generates, else user could click on a minefield immediately.
+	//replaces tutorial's variable btn
 
 	void onButtonClicked(wxCommandEvent& evt);
 
