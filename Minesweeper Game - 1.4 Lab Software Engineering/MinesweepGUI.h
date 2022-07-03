@@ -17,9 +17,9 @@ public:
 	int fieldHeight = 10;
 	wxButton** arrayOfButtonPtrs; //replaces tutorial's variable btn
 
-	int* minefieldTracker = nullptr; //replaces tutorial's variable btn
+	int* minefieldTracker = nullptr; //replaces tutorial's variable nField
 	bool veryFirstClick = true; //at this point is when the minefield generates, else user could click on a minefield immediately.
-	//replaces tutorial's variable btn
+	//replaces tutorial's variable bFirstClick
 
 	void onButtonClicked(wxCommandEvent& evt);
 

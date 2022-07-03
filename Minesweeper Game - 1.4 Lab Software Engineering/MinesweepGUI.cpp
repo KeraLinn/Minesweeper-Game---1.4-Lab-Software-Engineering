@@ -66,10 +66,10 @@ void MinesweepGUI::onButtonClicked(wxCommandEvent& evt)
 
 	//check if player hit mine
 	if (minefieldTracker[y * fieldWidth + x] == -1) {
-		wxMessageBox("BOOM! \nGame Over");
+		wxMessageBox("BOOM! Game Over");
 
 		//resetting game (reset first click, & setting all buttons back to blank/0)
-		veryFirstClick = false;
+		veryFirstClick = true;
 		for (int x = 0; x < fieldWidth; x++) {
 			for (int y = 0; y < fieldHeight; y++) {
 				minefieldTracker[y * fieldWidth + x] = 0;
@@ -81,19 +81,19 @@ void MinesweepGUI::onButtonClicked(wxCommandEvent& evt)
 	}
 	else { //player did NOT hit mine
 		//count neighbor cells that are mines
-		int mine_count = 0;
+		int neighborMineCount = 0;
 		for (int i = -1; i < 2; i++) {
 			for(int j = -1; j < 2; j++) {
 				if (x + i >= 0 && x + i < fieldWidth && y + j >= 0 && y + j < fieldHeight) {
-					if (minefieldTracker[(y + j) * fieldWidth + (x + i) == -1]) {
-						mine_count++;
+					if (minefieldTracker[(y + j) * fieldWidth + (x + i)] == -1) {
+						neighborMineCount++;
 					}
 				}
 			}
 		}
 		//update buttons to show mine count if > 0;
-		if (mine_count > 0) {
-			arrayOfButtonPtrs[y * fieldWidth + x]->SetLabel(std::to_string(mine_count));
+		if (neighborMineCount > 0) {
+			arrayOfButtonPtrs[y * fieldWidth + x]->SetLabel(std::to_string(neighborMineCount));
 		}
 	}
 
