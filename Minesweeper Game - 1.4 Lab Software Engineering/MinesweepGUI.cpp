@@ -17,9 +17,14 @@ MinesweepGUI::MinesweepGUI() : wxFrame(nullptr, wxID_ANY, "Lab 1.4 - Minesweeper
 	
 	minefieldTracker = new int[fieldWidth * fieldHeight];
 	
+	//Cosmetics//
+	wxFont myCustomFont(24, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
+	wxFont myCustomBombFont(24, wxFONTFAMILY_SCRIPT, wxFONTSTYLE_MAX, wxFONTWEIGHT_EXTRABOLD, false);
+
 	for (int x = 0; x < fieldWidth; x++) {
 		for (int y = 0; y < fieldHeight; y++) {
 			arrayOfButtonPtrs[y * fieldWidth + x] = new wxButton(this, 10000 + (y * fieldWidth +x));	//turns the 2D coordinates into 1D system for the array of buttons. Parent (this) is still the wxFrame, not the sizer
+			arrayOfButtonPtrs[y * fieldWidth + x]->SetFont(myCustomFont);
 			grid->Add(arrayOfButtonPtrs[y * fieldWidth + x], 1, wxEXPAND | wxALL);	   //adds array to grid-sizer, and the parameters wxEXPAND refers to dimensions of the grid-sizer, & wxALL refers to filling the entire space.
 			arrayOfButtonPtrs[y * fieldWidth + x]->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &MinesweepGUI::onButtonClicked, this);	  //Bind function connects the same function/event handler (onButtonClicked) to be associated with ALL buttons in the array, as opposed to using the event table above.
 			minefieldTracker[y * fieldWidth + x] = 0; //default value for each location in minefield. 
@@ -67,6 +72,8 @@ void MinesweepGUI::onButtonClicked(wxCommandEvent& evt)
 	//check if player hit mine
 	if (minefieldTracker[y * fieldWidth + x] == -1) {
 		wxMessageBox("BOOM! Game Over");
+
+
 
 		//resetting game (reset first click, & setting all buttons back to blank/0)
 		veryFirstClick = true;
