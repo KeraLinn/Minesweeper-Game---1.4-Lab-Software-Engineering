@@ -1,5 +1,4 @@
 #pragma once
-
 #include "wx/wx.h"
 
 //replaces the tutorial video's cMain
@@ -14,5 +13,8 @@ public:
 	wxTextCtrl* myFirstTextbox = nullptr;
 	wxListBox* myFirstListBox = nullptr;
 
+	void onButtonClicked(wxCommandEvent& evt);
+
+	wxDECLARE_EVENT_TABLE();
 };
 
