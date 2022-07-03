@@ -22,5 +22,5 @@ MinesweepGUI::~MinesweepGUI()
 void MinesweepGUI::onButtonClicked(wxCommandEvent& evt)
 {
 	myFirstListBox->AppendString(myFirstTextbox->GetValue());	//can use wxString and std::string class interchangably
-	evt.Skip();
+	evt.Skip();		//this function allows the program to skip checking the parent window(s) for the button clicked function. AKA confirms that this event has been handled.
 }
