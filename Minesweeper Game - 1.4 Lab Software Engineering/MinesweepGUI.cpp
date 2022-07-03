@@ -2,7 +2,7 @@
 
 //defining the Event Table here using wx-macros, it takes name of class it is producing events for and the base class as parameters
 wxBEGIN_EVENT_TABLE(MinesweepGUI, wxFrame)
-	EVT_BUTTON(1001, OnButtonClicked)
+	EVT_BUTTON(1001, onButtonClicked)
 wxEND_EVENT_TABLE()
 
 //replaces the tutorial video's cMain
