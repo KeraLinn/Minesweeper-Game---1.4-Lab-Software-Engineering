@@ -9,9 +9,14 @@ public:
 	~MinesweepGUI();
 
 public:
+	/*original code for this program
 	wxButton* myFirstButton = nullptr;
 	wxTextCtrl* myFirstTextbox = nullptr;
-	wxListBox* myFirstListBox = nullptr;
+	wxListBox* myFirstListBox = nullptr;*/
+	int fieldWidth = 10;
+	int fieldHeight = 10;
+	wxButton** arrayOfButtonPtrs;
+
 
 	void onButtonClicked(wxCommandEvent& evt);
 
