@@ -17,6 +17,8 @@ public:
 	int fieldHeight = 10;
 	wxButton** arrayOfButtonPtrs;
 
+	int* minefieldTracker = nullptr;
+	bool veryFirstClick = true; //at this point is when the minefield generates, else user could click on a minefield immediately.
 
 	void onButtonClicked(wxCommandEvent& evt);
 
