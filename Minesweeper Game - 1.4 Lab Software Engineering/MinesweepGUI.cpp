@@ -52,7 +52,6 @@ void MinesweepGUI::onButtonClicked(wxCommandEvent& evt)
 
 	if (veryFirstClick) {	//generate minefield AFTER first click
 		int mines = 30;
-		//**IDEA to have user specify difficulty or # of mines? Also don't know if going to end up being able to resize the grid too, but if not, could have that too.
 
 		while (mines) {
 			int rx = rand() % fieldWidth;
